@@ -1,0 +1,7 @@
+CREATE DATABASE cfd;
+
+CREATE USER cfd_admin WITH PASSWORD 'cfd_admin';
+
+GRANT ALL PRIVILEGES ON DATABASE ga TO cfd_admin;
+
+ALTER DATABASE cfd OWNER TO cfd_admin;
