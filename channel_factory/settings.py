@@ -18,7 +18,6 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
-print(f"BASE_DIR: {BASE_DIR}")
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'cfd',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +79,6 @@ WSGI_APPLICATION = 'channel_factory.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -91,7 +90,6 @@ DATABASES = {
         "CONN_MAX_AGE": env.int("CONN_MAX_AGE", default=0),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
